@@ -5,6 +5,7 @@
 
 
 class Action
+  attr_reader :speed
   def initialize
     @speed = 0
     @direction = 'north'
@@ -73,4 +74,13 @@ class Bike < Action
   end
 end
 
-Car.honk_horn
+
+#### This is what I was missing in testing the code. Asign a variable to the initialize method. It requires no inputs.
+
+car = Car.new
+car.honk_horn
+
+# added attribute reader for speed above. 
+pp car.speed
+car.accelerate
+pp car.speed

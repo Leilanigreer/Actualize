@@ -5,8 +5,8 @@ response = HTTP.get("https://data.sfgov.org/resource/jjew-r69b.json")
 
 trucks = response.parse
 
-pp trucks[0]
-pp trucks[0]["dayofweekstr"]
+# pp trucks[0]
+# pp trucks[0]["dayofweekstr"]
 
 # Goals
 
@@ -47,20 +47,24 @@ pp trucks[0]["dayofweekstr"]
 
 # Find the unique opening times
 
-open_unique_times = trucks.map { |truck| truck["start24"] }.uniq
-pp open_unique_times
+# open_unique_times = trucks.map { |truck| truck["start24"] }.uniq
+# pp open_unique_times
 
 # Find the unique closing times
 
-close_unique_times = trucks.map { |truck| truck["end24"] }.uniq
-pp close_unique_times
+# close_unique_times = trucks.map { |truck| truck["end24"] }.uniq
+# pp close_unique_times
 
 
 #convert one time string to a timestamp
 
-time_string = "07:00"
-timestamp = Time.parse("2000-01-01 #{time_string}")
-pp timestamp
+time_string_open = "07:00"
+open_timestamp = Time.parse("2000-01-01 #{time_string_open}")
+pp open_timestamp
+
+time_string_close = "11:00"
+close_timestamp = Time.parse("2000-01-01 #{time_string_close}")
+pp close_timestamp
 
 
 # open_sorted_times = open_unique_times.sort_by { |t| Time.parse("2000-01-01 #{t}") }
