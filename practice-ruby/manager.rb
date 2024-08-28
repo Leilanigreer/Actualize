@@ -46,6 +46,16 @@ class Manager < Employee
     # use email sending library...
     puts "Email sent!"
   end
+
+  def fire_all_employees
+    puts "We are doing layoffs"
+    # pp @emmployee
+    # pp @employees[0]
+    # pp @employees[1]
+    @employees.each do |employee|
+    employee.active = false
+    end
+  end
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
@@ -56,3 +66,13 @@ manager.give_all_raises
 # pp employee1.give_annual_raise
 employee1.print_info
 employee2.print_info
+
+
+# Write a method in the manager class that prints "We are doing layoffs"
+manager.fire_all_employees
+# Write a method that gets the managers employees
+
+# Write a method that gets the first employee
+
+# Write a method that gets the second emplyee
+# Write a method that changes the status of all the employees to false
