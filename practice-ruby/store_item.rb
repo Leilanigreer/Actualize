@@ -23,6 +23,9 @@
 # Bonus: Read more about Ruby classes: https://ruby-doc.com/core/Class.html
 
 class Item 
+  attr_reader :name
+  attr_writer :price
+
   def initialize(name, color, price, in_stock)
     @name = name 
     @color = color 
@@ -33,4 +36,4 @@ end
 
 food1 = Item.new("Apple", "Red", 5, false)
 
-pp food1
+pp food1.name
